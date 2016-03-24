@@ -10,11 +10,11 @@ This application is developed just for fun and learning Python.
 
 ## Usage
 
-python3 zipdictcracker.py -h
+	python3 zipdictcracker.py -h
 
 To get the help menu
 
-python3 zipdictcracker.py secure.zip dictionary.txt
+	python3 zipdictcracker.py secure.zip dictionary.txt
 
 It will check for all the words in the dictionary to crack the zip file and if found it will extract the files from the zip.
 
