@@ -48,12 +48,6 @@ def main():
 		if found != True:
 			t = Thread(target=extractFile, args=(zFile, password, lock, passFile))
 			t.start()
-		else:
-			passFile.close()
-			print('\n===========================================\n')
-			print('Exiting From Application\n')
-			print('===========================================\n')
-			sys.exit()
 	
 	while (threading.active_count() > 1):
 		if threading.active_count() == 1 and found != True:
@@ -62,6 +56,11 @@ def main():
 			print('\nPassword Not Found In Dictionary\n')
 			print('===========================================')
 			sys.exit()
+		elif threading.active_count() == 1 and found == True:
+			passFile.close()
+			print('\n===========================================\n')
+			print('Exiting From Application\n')
+			print('===========================================\n')
 			
 if __name__ == '__main__':
 	main()
